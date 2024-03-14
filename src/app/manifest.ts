@@ -2,9 +2,9 @@ import { MetadataRoute } from "next"
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: "D104",
-        short_name: "D104",
-        description: "Roomies of iiitdmj",
+        name: "Homely",
+        short_name: "Homely",
+        description: "Find your next home for forever",
         start_url: "/",
         display: "standalone",
         background_color: "#000",
