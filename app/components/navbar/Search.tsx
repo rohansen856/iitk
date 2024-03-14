@@ -26,76 +26,60 @@ const Search = () => {
     return 'Anywhere';
   }, [locationValue, getByValue]);
 
-  const durationLabel = useMemo(() => {
-    if (startDate && endDate) {
-      const start = new Date(startDate as string);
-      const end = new Date(endDate as string);
-      let diff = differenceInDays(end, start);
+  // const durationLabel = useMemo(() => {
+  //   if (startDate && endDate) {
+  //     const start = new Date(startDate as string);
+  //     const end = new Date(endDate as string);
+  //     let diff = differenceInDays(end, start);
 
-      if (diff === 0) {
-        diff = 1;
-      }
+  //     if (diff === 0) {
+  //       diff = 1;
+  //     }
 
-      return `${diff} Days`;
-    }
+  //     return `${diff} Days`;
+  //   }
 
-    return 'Any Week'
-  }, [startDate, endDate]);
+  //   return 'Any Week'
+  // }, [startDate, endDate]);
 
-  const guestLabel = useMemo(() => {
-    if (guestCount) {
-      return `${guestCount} Guests`;
-    }
+  // const guestLabel = useMemo(() => {
+  //   if (guestCount) {
+  //     return `${guestCount} Guests`;
+  //   }
 
-    return 'Add Guests';
-  }, [guestCount]);
+  //   return 'Add Guests';
+  // }, [guestCount]);
 
   return ( 
     <div
       onClick={searchModal.onOpen}
       className="
-        border-[1px] 
-        w-full 
-        md:w-auto 
-        py-2 
-        rounded-full 
-        shadow-sm 
-        hover:shadow-md 
-        transition 
-        cursor-pointer
+        absolute
+        w-screen
+        top-[40svh]
+        max-sm:top-[15svh]
+        flex
+        justify-center
+        items-center
+        left-0
       "
     >
       <div 
         className="
+          border-[1px] 
+          py-2 
+          rounded-full 
+          shadow-sm 
+          hover:shadow-md 
+          transition 
+          cursor-pointer
+          w-1/2
           flex 
           flex-row 
           items-center 
-          justify-between
+          justify-end
         "
       >
-        <div 
-          className="
-            text-sm 
-            font-semibold 
-            px-6
-          "
-        >
-          {locationLabel}
-        </div>
-        <div 
-          className="
-            hidden 
-            sm:block 
-            text-sm 
-            font-semibold 
-            px-6 
-            border-x-[1px] 
-            flex-1 
-            text-center
-          "
-        >
-          {durationLabel}
-        </div>
         <div 
           className="
             text-sm 
@@ -108,7 +92,7 @@ const Search = () => {
             gap-3
           "
         >
-          <div className="hidden sm:block">{guestLabel}</div>
+          <div className="hidden sm:block">{locationLabel}</div>
           <div 
             className="
               p-2 
