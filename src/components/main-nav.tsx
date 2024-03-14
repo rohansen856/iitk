@@ -38,7 +38,8 @@ export function MainNav({ items, children }: MainNavProps) {
                                 item.href.startsWith(`/${segment}`)
                                     ? "text-foreground"
                                     : "text-foreground/60",
-                                item.disabled && "cursor-not-allowed opacity-80"
+                                item.disabled && "cursor-not-allowed opacity-80",
+                                item.title === "Exclusive" && "text-yellow-300" // Add this line
                             )}
                         >
                             {item.title}
