@@ -1,9 +1,10 @@
-import NextAuth from "next-auth"
+export { default } from "next-auth/middleware"
 
-import { authConfig } from "./src/lib/auth"
-
-export default NextAuth(authConfig).auth
-
-export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|.png).*)"],
-}
+export const config = { 
+  matcher: [
+    "/trips",
+    "/reservations",
+    "/properties",
+    "/favorites"
+  ]
+};
