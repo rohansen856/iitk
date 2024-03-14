@@ -63,7 +63,7 @@ export function PropertyForm() {
     }
 
     return (
-        <div className="m-6 flex w-[500px] max-w-full flex-col items-center rounded-lg border p-3">
+        <div className="flex w-full max-w-full flex-col items-center justify-center bg-purple-400 rounded-lg border p-3">
             <h2 className="text-lg font-bold">ADD NEW PROPERTY </h2>
             <div className="m-4 w-full space-y-2">
                 <Label htmlFor="city">City</Label>
