@@ -1,0 +1,88 @@
+.neon_red {
+    --neon: #ff5161;
+    --neon-glow: #d30302;
+}
+
+.neon_pink {
+    --neon: #ff53cd;
+    --neon-glow: #e10361;
+}
+
+.neon_purple {
+    --neon: #9461fd;
+    --neon-glow: #4003e6;
+}
+
+.neon_blue {
+    --neon: #2dd9fe;
+    --neon-glow: #00a3d5;
+}
+
+.neon_green {
+    --neon: #00fe9b;
+    --neon-glow: #02c435;
+}
+
+.neon_yellow {
+    --neon: #ffdb4e;
+    --neon-glow: #b48505;
+}
+
+.neon_white {
+    --neon: #fefefe;
+    --neon-glow: #ffffff;
+}
+
+@supports (background: color(display-p3 1 1 1)) {
+    @media (dynamic-range: high) {
+        .neon_red {
+            --neon-glow: color(display-p3 1 0 0);
+        }
+
+        .neon_pink {
+            --neon-glow: color(display-p3 1 0 1);
+        }
+
+        .neon_purple {
+            --neon-glow: color(display-p3 0 0 1);
+        }
+
+        .neon_blue {
+            --neon-glow: color(display-p3 0 1 1);
+        }
+
+        .neon_green {
+            --neon-glow: color(display-p3 0 1 0);
+        }
+
+        .neon_yellow {
+            --neon-glow: color(display-p3 1 1 0);
+        }
+
+        .neon_white {
+            --neon-glow: color(display-p3 1 1 1);
+        }
+    }
+}
+
+.ring {
+    border: 2px solid var(--neon);
+    box-shadow:
+        0 0 50px var(--neon-glow),
+        inset 0 0 50px var(--neon-glow);
+    box-sizing: border-box;
+}
+
+.line::after,
+.line::before {
+    content: " ";
+    height: 1px;
+    width: 36px;
+    transform: translateX(-6px);
+    position: absolute;
+    margin: 5px 0;
+    bottom: -10px;
+    border-radius: 5px;
+    background: var(--neon);
+    box-shadow: 0 0 25px 2.5px var(--neon-glow);
+}

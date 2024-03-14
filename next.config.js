@@ -1,14 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    appDir: true,
-  },
-  images: {
-    domains: [
-      'res.cloudinary.com',
-      'lh3.googleusercontent.com'
-    ]
-  }
+    images: {
+        remotePatterns: [
+            {
+                protocol: "https",
+                hostname: "avatars.githubusercontent.com",
+            },
+            {
+                protocol: "https",
+                hostname: "utfs.io",
+            },
+        ],
+    },
 }
 
 module.exports = nextConfig
