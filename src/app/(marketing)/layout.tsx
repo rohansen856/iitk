@@ -29,10 +29,9 @@ export default async function MarketingLayout({
                             href={!session?.user ? "/login" : "/dashboard"}
                             className={cn(
                                 buttonVariants({
-                                    variant: "secondary",
-                                    size: "sm",
+                                    variant: "outline",
                                 }),
-                                "px-4"
+                                "px-16 bg-transparent rounded-full text-purple-400/80 hover:bg-purple-400/80 hover:text-white transition-colors"
                             )}
                         >
                             Login
