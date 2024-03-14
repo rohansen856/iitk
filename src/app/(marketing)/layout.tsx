@@ -15,6 +15,7 @@ interface MarketingLayoutProps {
 export default async function MarketingLayout({
     children,
 }: MarketingLayoutProps) {
+    
     const session = await auth()
 
     return (
@@ -40,7 +41,6 @@ export default async function MarketingLayout({
                 </div>
             </header>
             <main className="flex-1">{children}</main>
-            <SiteFooter className="bg-background" />
         </div>
     )
 }

@@ -25,7 +25,7 @@ export function MainNav({ items, children }: MainNavProps) {
                 href={absoluteUrl("/")}
                 className="hidden items-center space-x-2 md:flex"
             >
-                <Icons.logo />
+                <img src="/logo.svg" alt={"homely"} className="h-8" />
             </Link>
             {items?.length ? (
                 <nav className="hidden gap-6 md:flex">
