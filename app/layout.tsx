@@ -11,6 +11,7 @@ import ToasterProvider from '@/app/providers/ToasterProvider';
 import './globals.css'
 import ClientOnly from './components/ClientOnly';
 import getCurrentUser from './actions/getCurrentUser';
+import Buildings from './components/Buildings';
 
 export const metadata = {
   title: 'Homely',
@@ -31,6 +32,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <Buildings/>
         <ClientOnly>
           <ToasterProvider />
           <LoginModal />
