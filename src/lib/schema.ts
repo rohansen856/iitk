@@ -1,4 +1,3 @@
-import type { AdapterAccount } from "@auth/core/adapters"
 import {
     integer,
     json,
@@ -14,6 +13,7 @@ export const users = pgTable(
     {
         id: text("id").notNull().primaryKey(),
         name: text("name"),
+        type: text("type").default("buyer"),
         email: text("email").notNull(),
         emailVerified: timestamp("emailVerified", { mode: "date" }),
         createdAt: timestamp("created_at").notNull().defaultNow(),
@@ -26,57 +26,14 @@ export const users = pgTable(
     }
 )
 
-export const accounts = pgTable(
-    "account",
-    {
-        userId: text("userId")
-            .notNull()
-            .references(() => users.id, { onDelete: "cascade" }),
-        type: text("type").$type<AdapterAccount["type"]>().notNull(),
-        provider: text("provider").notNull(),
-        providerAccountId: text("providerAccountId").notNull(),
-        refresh_token: text("refresh_token"),
-        access_token: text("access_token"),
-        expires_at: integer("expires_at"),
-        token_type: text("token_type"),
-        scope: text("scope"),
-        id_token: text("id_token"),
-        session_state: text("session_state"),
-    },
-    (account) => ({
-        compoundKey: primaryKey(account.provider, account.providerAccountId),
-    })
-)
-
-export const sessions = pgTable("session", {
-    sessionToken: text("sessionToken").notNull().primaryKey(),
+export const properties = pgTable("properties", {
     userId: text("userId")
         .notNull()
         .references(() => users.id, { onDelete: "cascade" }),
-    expires: timestamp("expires", { mode: "date" }).notNull(),
-})
-
-export const verificationTokens = pgTable(
-    "verificationToken",
-    {
-        identifier: text("identifier").notNull(),
-        token: text("token").notNull(),
-        expires: timestamp("expires", { mode: "date" }).notNull(),
-    },
-    (vt) => ({
-        compoundKey: primaryKey(vt.identifier, vt.token),
-    })
-)
-
-export const profile = pgTable("profile", {
-    id: text("id")
-        .primaryKey()
-        .references(() => users.id, { onDelete: "cascade" }),
-    name: text("name"),
-    image: text("image"),
-    bio: text("bio"),
-    mainSkill: text("main_skill"),
-    secSkills: json("secondary_skills").$type<string[]>(),
-    social: json("social").$type<string[]>(),
-    createdAt: timestamp("created_at").notNull().defaultNow(),
+    city: text("city").notNull(),
+    bhk: integer("bhk").default(2),
+    rating: integer("rating").default(4),
+    address: text("address").default(""),
+    image: text("image").notNull(),
+    panorama: text("panorama").notNull(),
 })
