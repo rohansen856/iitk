@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
+import Buildings from "@/components/Buildings"
 
 interface MarketingLayoutProps {
     children: React.ReactNode
@@ -14,10 +15,12 @@ interface MarketingLayoutProps {
 export default async function MarketingLayout({
     children,
 }: MarketingLayoutProps) {
+    
     const session = await auth()
 
     return (
         <div className="flex min-h-screen flex-col">
+            <Buildings />
             <header className="container z-40 bg-background">
                 <div className="flex h-20 items-center justify-between py-6">
                     <MainNav items={marketingConfig.mainNav} />
@@ -38,7 +41,6 @@ export default async function MarketingLayout({
                 </div>
             </header>
             <main className="flex-1">{children}</main>
-            <SiteFooter className="bg-background" />
         </div>
     )
 }
