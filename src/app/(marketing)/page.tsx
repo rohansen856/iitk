@@ -9,7 +9,7 @@ const options = [
     { value: "2", label: "Madrid" },
     { value: "3", label: "Melbourne" },
     { value: "4", label: "Moscow" },
-    { value: "5", label: "Manila" },
+    { value: "5", label: "Malaysia" },
     { value: "6", label: "Kolkata" },
     { value: "7", label: "Karachi" },
     { value: "8", label: "Kanpur" },

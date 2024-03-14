@@ -19,7 +19,7 @@ export default async function MarketingLayout({
     const session = await auth()
 
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col max-w-screen overflow-x-hidden">
             <Buildings />
             <header className="container z-40 bg-background">
                 <div className="flex h-20 items-center justify-between py-6">
