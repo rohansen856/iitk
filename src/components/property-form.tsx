@@ -64,27 +64,30 @@ export function PropertyForm() {
     }
 
     return (
-        <div className="m-6 flex w-[500px] max-w-full flex-col items-center rounded-lg border p-3">
-            <h2 className="text-lg font-bold">ADD NEW PROPERTY </h2>
+        <div className="flex w-full max-w-full flex-col items-center justify-center bg-purple-400 rounded-lg border p-3">
+            <h2 className="text-lg font-bold">List New Property </h2>
             <div className="m-4 w-full space-y-2">
                 <Label htmlFor="city">City</Label>
                 <Input
                     id="city"
                     className="w-full"
-                    placeholder="enter city"
+                    placeholder="Enter City"
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
                 />
             </div>
             <div className="m-4 w-full space-y-2">
-                <Label htmlFor="image">image</Label>
-                <Input
+                <Label htmlFor="image">Image</Label>
+                <div className="flex flex-row">
+                <input
                     id="image"
-                    className="w-full"
-                    placeholder="enter image"
+                    className="w-full rounded-l-lg h-10 bg-black placeholder:px-3 placeholder:text-sm "
+                    placeholder="Add Images"
                     value={image}
                     onChange={(e) => setImage(e.target.value)}
                 />
+                <button className="rounded-r-lg w-20 bg-black">Upload</button>
+                </div>
             </div>
             <div className="m-4 w-full space-y-2">
                 <Label htmlFor="panorama">panorama</Label>
