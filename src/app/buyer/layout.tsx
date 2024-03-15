@@ -18,7 +18,7 @@ export default async function MarketingLayout({
 
     return (
         <div className="relative flex min-h-screen max-w-full flex-col overflow-x-hidden">
-            <div className="absolute -z-10 h-screen w-screen">
+            <div className="absolute -z-10 h-full w-screen">
                 <div className="relative h-full w-full bg-slate-950">
                     {/* eslint-disable-next-line tailwindcss/no-contradicting-classname */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_35px]"></div>
