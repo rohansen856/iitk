@@ -6,6 +6,7 @@ import axios from "axios"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
+import { toast } from "./ui/use-toast"
 
 export function PropertyForm() {
     const [city, setCity] = useState("")
@@ -13,16 +14,52 @@ export function PropertyForm() {
     const [panorama, setPanorama] = useState("")
     const [address, setAddress] = useState("")
     const [bhk, setBhk] = useState(2)
+    const [price, setPrice] = useState(0)
+    const [size, setSize] = useState(0)
     const [rating, setRating] = useState(4)
-    const [userId, setUserId] = useState("")
+    const [userId, setUserId] = useState<string | null>()
 
-    let obj = { city, image, panorama, address, bhk, rating }
+    useEffect(() => {
+        setUserId(localStorage.getItem("id"))
+    }, [])
 
     async function postProperty() {
-        console.log({ city, image, panorama, address, bhk, rating, userId })
-        await axios.post("/api/property", {
-            data: { city, image, panorama, address, bhk, rating, userId },
-        })
+        try {
+            const res = await axios.post("/api/property", {
+                data: {
+                    city,
+                    image,
+                    panorama,
+                    address,
+                    bhk,
+                    rating,
+                    price,
+                    size,
+                    userId,
+                },
+            })
+            if (res.status === 200)
+                return toast({
+                    title: "Creation Successful.",
+                    description: "The propeerty was added successfully.",
+                    variant: "default",
+                })
+        } catch (e) {
+            if (!userId || userId.toString().length <= 2) {
+                return toast({
+                    title: "Please login.",
+                    description: "Please login or signup to continue",
+                    variant: "destructive",
+                })
+            } else {
+                return toast({
+                    title: "Failed to create.",
+                    description:
+                        "There was an error adding your propery. Please try again later.",
+                    variant: "destructive",
+                })
+            }
+        }
     }
 
     return (
@@ -86,6 +123,26 @@ export function PropertyForm() {
                     placeholder="enter rating"
                     value={rating}
                     onChange={(e) => setRating(Number.parseInt(e.target.value))}
+                />
+            </div>
+            <div className="m-4 w-full space-y-2">
+                <Label htmlFor="price">price</Label>
+                <Input
+                    id="price"
+                    className="w-full"
+                    placeholder="enter price"
+                    value={price}
+                    onChange={(e) => setPrice(Number.parseInt(e.target.value))}
+                />
+            </div>
+            <div className="m-4 w-full space-y-2">
+                <Label htmlFor="size">size</Label>
+                <Input
+                    id="size"
+                    className="w-full"
+                    placeholder="enter size"
+                    value={size}
+                    onChange={(e) => setSize(Number.parseInt(e.target.value))}
                 />
             </div>
             <Button className="mt-2 w-full" onClick={postProperty}>

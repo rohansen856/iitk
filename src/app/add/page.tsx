@@ -1,8 +1,8 @@
-import React from "react"
+"use client"
 
 import { PropertyForm } from "@/components/property-form"
 
-const page = () => {
+const Page = () => {
     return (
         <div>
             <PropertyForm />
@@ -10,4 +10,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page

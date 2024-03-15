@@ -30,7 +30,7 @@ export default async function MarketingLayout({
                                     size: "sm",
                                 }),
                                 "px-4",
-                                
+
                             )}
                         >
                             Login
@@ -39,7 +39,6 @@ export default async function MarketingLayout({
                 </div>
             </header>
             <main className="flex-1">{children}</main>
-            <SiteFooter className="bg-background" />
         </div>
     )
 }
