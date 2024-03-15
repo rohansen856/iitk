@@ -72,7 +72,6 @@ const page = () => {
     <div className='bg-purple-400 h-[40svh] w-[25svh] rounded-tr-lg text-center'>More Info</div>
     </div>
   )
-
 }
 
 export default page
