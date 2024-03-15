@@ -1,20 +1,66 @@
+"use client"
+
 import React, { useEffect, useRef } from "react"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import anime from "animejs"
 
 import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
 
 export function Loadmore() {
     return true
 }
 
-const page = () => {
+const Page = () => {
+    const router = useRouter()
     return (
         <div className="my-5 flex h-full w-full flex-col justify-center gap-5 px-12 lg:flex-row lg:px-36">
-            <div className="h-[300px] w-full rounded-t-lg bg-purple-800/20 text-center lg:h-[100svh] lg:w-[45svw] lg:rounded-tr-none py-2 ">
+            <div className="h-[300px] w-full rounded-t-lg bg-purple-800/20 py-2 text-center lg:h-[50svh] lg:w-[45svw] lg:rounded-tr-none ">
                 Filters
+                <div className="w-full flex flex-col pt-8 px-2">
+                    <Input placeholder="enter city name" className="my-2" />
+                    <Input
+                        placeholder="enter minimum size in sq. ft."
+                        className="my-2"
+                    />
+                    <Input
+                        placeholder="enter maximum size in sq. ft."
+                        className="my-2"
+                    />
+                    <Select>
+                        <SelectTrigger className="w-full my-2">
+                            <SelectValue placeholder="Select BHK" />
+                        </SelectTrigger>
+                        <SelectContent>
+                            <SelectGroup>
+                                <SelectLabel>Select BHK</SelectLabel>
+                                <SelectItem value="apple">1 BHK</SelectItem>
+                                <SelectItem value="banana">2 BHK</SelectItem>
+                                <SelectItem value="blueberry">3 BHK</SelectItem>
+                            </SelectGroup>
+                        </SelectContent>
+                    </Select>
+                    <Button
+                        onClick={() => {
+                            router.push("/property/980")
+                        }}
+                        className="mt-12"
+                    >
+                        Filter
+                    </Button>
+                </div>
             </div>
-            <div className="flex h-full w-full flex-col items-center gap-5 bg-purple-800/20 text-center py-2">
+            <div className="flex h-full w-full flex-col items-center gap-5 bg-purple-800/20 py-2 text-center">
                 <span>property listing</span>
                 <Link
                     href={"/property/987"}
@@ -93,4 +139,4 @@ const page = () => {
     )
 }
 
-export default page
+export default Page
