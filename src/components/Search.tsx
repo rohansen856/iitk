@@ -38,7 +38,7 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({ options }) => {
         <>
             <Input
                 ref={inp}
-                className="py-6 rounded-full bg-white/80 border-0 focus-visible:ring-offset-0 focus-visible:ring-0 focus-visible:outline-purple-500 focus-visible:outline-2 text-black"
+                className="py-6 rounded-full bg-white/80 border-0 focus-visible:ring-offset-0 focus-visible:ring-0 focus-visible:outline-purple-500 focus-visible:outline-2 text-black placeholder:font-mon-b placeholder:tracking-widest placeholder:text-xl"
                 type="text"
                 placeholder="City"
                 value={searchValue}

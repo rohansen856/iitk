@@ -54,6 +54,7 @@
         "date-fns": "^2.30.0",
         "drizzle-orm": "^0.29.0",
         "drizzle-zod": "^0.5.1",
+        "embla-carousel-react": "^8.0.0",
         "framer-motion": "^10.16.4",
         "lucide-react": "^0.292.0",
         "next": "14.0.1",
