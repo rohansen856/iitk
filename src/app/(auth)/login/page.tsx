@@ -34,8 +34,8 @@ export default function PropertyForm() {
                     <CardTitle>Login</CardTitle>
                 </CardHeader>
                 <CardContent className="flex flex-row lg:flex-row gap-20 my-5 items-center">
-                    <div className="grid w-[25vw] items-center gap-4">
-                        <div className="flex flex-col space-y-1.5">
+                    <div className="grid items-center gap-4">
+                        <div className="flex flex-col space-y-1.5 w-full px-4">
                             <Label htmlFor="email">Email</Label>
                             <Input
                                 id="email"
@@ -43,9 +43,10 @@ export default function PropertyForm() {
                                 type="email"
                                 required
                                 placeholder="Email"
+                                className="w-full"
                             />
                         </div>
-                        <div className="flex flex-col space-y-1.5">
+                        <div className="flex flex-col space-y-1.5 w-full px-4">
                             <Label htmlFor="password">Password</Label>
                             <Input
                                 id="password"
@@ -53,6 +54,7 @@ export default function PropertyForm() {
                                 type="password"
                                 required
                                 placeholder="Password"
+                                className="w-full"
                             />
                         </div>
                     </div>
