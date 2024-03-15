@@ -35,7 +35,7 @@ export default function PropertyCard() {
       })
     return (
         <>
-            <div className="flex max-h-[80vh] flex-col w-full items-center" ref={h1}>
+            <div className="flex max-h-[80vh] flex-col w-full items-center mt-8" ref={h1}>
             <Card className="mx-[10%] bg-purple-500/10 ">
                 <CardHeader>
                 <CardTitle>{prop.name}</CardTitle>

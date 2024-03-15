@@ -42,7 +42,7 @@ const Page = () => {
 
     return (
         <div className="my-5 flex h-full w-full flex-col-reverse justify-center gap-10 px-5 lg:flex-row lg:px-36 ">
-            <div className="flex h-full w-full flex-col items-center gap-5 rounded-lg bg-purple-400 text-center">
+            {/* <div className="flex h-full w-full flex-col items-center gap-5 rounded-lg bg-purple-400 text-center">
                 <span>Your Properties</span>
                 <div className="flex h-full max-w-[95%] flex-col items-start gap-2 rounded-lg bg-purple-500 p-4 lg:flex-row ">
                     <img src="/house.svg" alt="" className="h-full w-[50svw]" />
@@ -101,8 +101,8 @@ const Page = () => {
                     </div>
                 </div>
                 <Button>Load More</Button>
-            </div>
-            <div className="flex h-full w-full flex-col gap-4 text-center">
+            </div> */}
+            <div className="flex h-full w-full flex-col gap-4">
                 <PropertyForm />
             </div>
         </div>
