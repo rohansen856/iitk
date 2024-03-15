@@ -23,15 +23,18 @@ const Buildings: React.FC<BuildingsProps> = () => {
             const stateSetter = eval(`setState${i}`);
             stateSetter(`${randomValue}%`);
         }
-        for (let i = 5; i <= 8; i++) {
-            const randomValue = Math.floor(Math.random() * 41) + 30;
-            const stateSetter = eval(`setState${i}`);
-            stateSetter(`${randomValue}%`);
-        }
+        setState6("60%")
+        setState7("30%")
+        setState8("69%")
+        // for (let i = 5; i <= 8; i++) {
+        //     const randomValue = Math.floor(Math.random() * 41) + 30;
+        //     const stateSetter = eval(`setState${i}`);
+        //     stateSetter(`${randomValue}%`);
+        // }
     }, []);
 return ( 
     <>
-    <div className="flex w-screen h-[100svh] absolute z-0 gap-4 items-end blur-[2px]">
+    <div className="flex w-screen h-[100svh] absolute z-0 gap-4 items-end blur-[2px] opacity-75">
             <div className="w-2/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state1 }}></div>
             <div className="w-1/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state2 }}></div>
             <div className="w-2/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state3 }}></div>
