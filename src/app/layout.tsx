@@ -1,4 +1,5 @@
 import { Inter as FontSans } from "next/font/google"
+import { Montserrat } from "next/font/google"
 import localFont from "next/font/local"
 
 import "@/styles/globals.css"
@@ -19,6 +20,18 @@ const fontSans = FontSans({
 const fontHeading = localFont({
     src: "../assets/fonts/CalSans-SemiBold.woff2",
     variable: "--font-heading",
+})
+
+const fontMontserratr = Montserrat({
+    subsets: ["latin"],
+    variable: "--font-montserrat",
+    weight: "400"
+})
+
+const fontMontserratb = Montserrat({
+    subsets: ["latin"],
+    variable: "--font-montserratb",
+    weight: "700"
 })
 
 interface RootLayoutProps {
@@ -78,8 +91,9 @@ export const metadata = {
 
 export default function RootLayout({ children }: RootLayoutProps) {
     return (
-        <html lang="en" suppressHydrationWarning>
-            <head />
+        <html lang="en" suppressHydrationWarning className={`${fontMontserratb.variable} ${fontMontserratr.variable}`}>
+            <head>
+            </head>
             <body
                 className={cn(
                     "min-h-screen bg-background font-sans antialiased",
