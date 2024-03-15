@@ -60,10 +60,17 @@ export default function PropertyForm() {
                             </div>
                         </div>
                 </CardContent>
-                <CardFooter className="flex justify-between">
-                    <Button formAction={login}>Login</Button>
-                    <Button formAction={signup}>SignUp</Button>
-
+                <CardFooter className="flex justify-between flex-col gap-16 ">
+                    <div className="w-full">
+                    <Button formAction={login} className="w-full">Login</Button>
+                    <div className="w-full flex flex-row gap-5">
+                    <div className="h-0.5  bg-slate-600 my-3 w-[60%]"></div>
+                    <span className="justify-center">or</span>
+                    <div className="h-0.5 bg-slate-600 my-3 w-[60%]"></div>
+                    </div>
+                    <Button formAction={signup} className="w-full">Sign Up</Button>
+                    </div>
+                    <Button formAction={signup} className="w-full gap-2"> <img src="/googleloginimg.png" alt="" className="h-full"/> Sign in with google</Button>
                 </CardFooter>
             </Card>
         </form>
