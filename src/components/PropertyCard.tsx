@@ -18,9 +18,8 @@ export default function PropertyCard() {
 
     const prop = {
         "id":id,
-        "name":"Property Card",
-        "description":"This is a property card"
-
+        "name":"Cozy Mansion",
+        "description":"The perfect retirement Home!"
     }
 
     useEffect(()=> {
@@ -36,14 +35,35 @@ export default function PropertyCard() {
     return (
         <>
             <div className="flex h-[80vh] flex-col w-full items-center justify-center" ref={h1}>
-            <Card className="w-3/5 h-4/5 bg-purple-500/10">
+            <Card className="w-3/5  bg-purple-500/10">
                 <CardHeader>
-                <CardTitle>{id.name}</CardTitle>
-                <CardDescription>Deploy your new project in one-click.</CardDescription>
+                <CardTitle>{prop.name}</CardTitle>
+                <CardDescription>{prop.description}</CardDescription>
                 </CardHeader>
-                <CardContent className="flex">
+                <CardContent className="flex gap-20 my-5">
                     <PropImage />
-                    {id}
+                    <div className="flex flex-col w-[40%] gap-4">
+                        <div className="flex flex-col lg:items-start">
+                            <span className="text font-mon-b">Pricing</span>
+                            <span className="text-2xl font-mon-b">$22L-44L</span>
+                            <span className="text-xs">view EMI options</span>
+                        </div>
+                        <div className="flex flex-col lg:items-start">
+                            <span className="text font-mon-b">Location</span>
+                            <span className="text-xl">Kanpur</span>
+                            <span>IIT road</span>
+                        </div>
+                        <div className="flex flex-col lg:items-start">
+                            <span className="text font-mon-b">Area</span>
+                            <span className="text-xl">1080sq.ft</span>
+                            <span>3 BHK</span>
+                        </div>
+                        <div className="flex flex-col lg:items-start">
+                            <span className="text font-mon-b">Amenities</span>
+                            <span className="text-xl">Hospitals, Schools within 2 kms</span>
+                            <span>The surroundings are generally peaceful the </span>
+                        </div>
+                    </div>
                 </CardContent>
                 <CardFooter className="flex justify-between">
                 <Button variant="outline">Cancel</Button>
