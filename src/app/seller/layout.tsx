@@ -24,9 +24,9 @@ export default async function MarketingLayout({
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_35px]"></div>
                 </div>
             </div>
-            <header className="container z-40 bg-background">
+            <header className="container z-40 bg-transparent">
                 <div className="flex h-20 items-center justify-between py-6">
-                    {/* <MainNav items={marketingConfig.mainNav} /> */}
+                    <MainNav items={marketingConfig.mainNav} />
                     <nav>
                         <Link
                             href={!session?.user ? "/login" : "/dashboard"}
