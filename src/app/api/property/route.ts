@@ -16,7 +16,6 @@ export async function POST(req: Request) {
             id: payload.id,
             city: payload.city.toLowerCase(),
             image: payload.image,
-            panorama: payload.panorama,
             address: payload.address,
             bhk: payload.bhk,
             price: payload.price,

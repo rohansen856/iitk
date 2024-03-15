@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
 import anime from "animejs"
 import { Club, School2 } from "lucide-react"
@@ -35,6 +36,7 @@ export default function PropertyCard() {
             description: "The perfect retirement Home!",
             longDesc:
                 "The atmosphere is lively, fostering social interaction and personal growth. Facilities are accessible, promoting convenience and ease of living.",
+            map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114312.51528009173!2d80.25598103996941!3d26.44715007162656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c4770b127c46f%3A0x1778302a9fbe7b41!2sKanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710504808525!5m2!1sen!2sin",
         },
         {
             id: 2,
@@ -46,6 +48,7 @@ export default function PropertyCard() {
             description: "Exquisite living at its finest!",
             longDesc:
                 "Indulge in luxury with breathtaking views, top-notch amenities, and unparalleled comfort. Experience opulence like never before.",
+            map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004883842!2d77.04417347155065!3d28.52725273882469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1710504987437!5m2!1sen!2sin",
         },
         {
             id: 3,
@@ -57,6 +60,7 @@ export default function PropertyCard() {
             description: "Escape to serenity amidst nature!",
             longDesc:
                 "Embrace the tranquility of nature with this charming cottage. Surrounded by lush greenery and majestic mountains, it's an idyllic retreat for those seeking peace and relaxation.",
+            map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812153.9041600493!2d71.07362921622213!3d18.820144128111238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2zTXVtYmFpIOCkruClgeCkguCkrOCkiA!5e0!3m2!1sen!2sin!4v1710505128602!5m2!1sen!2sin",
         },
     ]
 
@@ -67,6 +71,8 @@ export default function PropertyCard() {
         prop = properties[2]
     }
 
+    const [loggedin, setloggedin] = useState(false)
+
     useEffect(() => {
         const animation = anime({
             targets: [h1.current],
@@ -76,6 +82,8 @@ export default function PropertyCard() {
             delay: anime.stagger(100),
             easing: "easeOutQuad",
         })
+
+        setloggedin(window.localStorage.getItem("auth") === "ok")
     })
     return (
         <>
@@ -88,77 +96,99 @@ export default function PropertyCard() {
                         <CardTitle>{prop.name}</CardTitle>
                         <CardDescription>{prop.description}</CardDescription>
                     </CardHeader>
-                    <CardContent className="flex flex-col lg:flex-row gap-20 my-5 items-center">
-                        <PropImage />
-                        <div className="flex flex-col gap-4 outline-1 outline-dashed rounded-md p-5">
-                            <div className="flex flex-col lg:items-start relative">
-                                <span className="text font-mon-b">Pricing</span>
-                                <span className="text-2xl font-mon-b">
-                                    ${prop.price}
-                                </span>
-                                <span className="text-xs">
-                                    view EMI options
-                                </span>
-                                <div className="flex absolute right-0 flex-col top-6">
-                                    <span className="text-green-400 text-xs">
-                                        +12%
+                    <CardContent className="flex flex-col gap-20 my-5 items-center">
+                        <div className="flex flex-col lg:flex-row gap-20 my-5 items-center">
+                            <PropImage nums={[]} />
+                            <div className="flex flex-col gap-4 outline-1 outline-dashed rounded-md p-5">
+                                <div className="flex flex-col lg:items-start relative">
+                                    <span className="text font-mon-b">
+                                        Pricing
+                                    </span>
+                                    <span className="text-2xl font-mon-b">
+                                        ${prop.price}
                                     </span>
                                     <span className="text-xs">
-                                        In last 90 days
+                                        view EMI options
                                     </span>
+                                    <div className="flex absolute right-0 flex-col top-6">
+                                        <span className="text-green-400 text-xs">
+                                            +12%
+                                        </span>
+                                        <span className="text-xs">
+                                            In last 90 days
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div className="flex flex-row gap-5">
-                                <div className="flex h-full flex-col lg:items-start pr-2 border-white border-r">
+                                <div className="flex flex-row gap-5">
+                                    <div className="flex h-full flex-col lg:items-start pr-2 border-white border-r">
+                                        <span className="text font-mon-b">
+                                            Location
+                                        </span>
+                                        <span className="text-xl">
+                                            {prop.city}
+                                        </span>
+                                        <span>IIT road</span>
+                                    </div>
+                                    <div className="flex h-full flex-col lg:items-start pr-2 border-white border-r">
+                                        <span className="text font-mon-b">
+                                            Area
+                                        </span>
+                                        <span className="text-xl">
+                                            {prop.size}sq.ft
+                                        </span>
+                                        <span>3 BHK</span>
+                                    </div>
+                                    <div className="flex h-full flex-col lg:items-start border-r">
+                                        <span className="text font-mon-b">
+                                            listed
+                                        </span>
+                                        <span className="text-xl">
+                                            2 dec 2023
+                                        </span>
+                                        <span>by {prop.seller}</span>
+                                    </div>
+                                </div>
+                                <div className="flex flex-col lg:items-start">
                                     <span className="text font-mon-b">
-                                        Location
+                                        Amenities
                                     </span>
-                                    <span className="text-xl">{prop.city}</span>
-                                    <span>IIT road</span>
+                                    <div className="flex gap-4">
+                                        {/* <Hospital className="mt-2" /> */}
+                                        <School2 className="mt-2" />
+                                        <Club className="mt-2" />
+                                    </div>
+                                    {/* <span className="text-xl">Hospitals, Schools within 2 kms.</span> */}
+                                    {/* <span>24/7 water supply, power backup</span> */}
+                                    {/* <span>The atmosphere is lively, fostering social interaction and personal growth. Facilities are accessible, promoting convenience and ease of living.</span> */}
                                 </div>
-                                <div className="flex h-full flex-col lg:items-start pr-2 border-white border-r">
+                                <div className="flex flex-col lg:items-start">
                                     <span className="text font-mon-b">
-                                        Area
+                                        Description
                                     </span>
-                                    <span className="text-xl">
-                                        {prop.size}sq.ft
-                                    </span>
-                                    <span>3 BHK</span>
-                                </div>
-                                <div className="flex h-full flex-col lg:items-start border-r">
-                                    <span className="text font-mon-b">
-                                        listed
-                                    </span>
-                                    <span className="text-xl">2 dec 2023</span>
-                                    <span>by {prop.seller}</span>
+                                    {/* <span className="text-xl">Hospitals, Schools within 2 kms.</span> */}
+                                    {/* <span>24/7 water supply, power backup</span> */}
+                                    <span>{prop.longDesc}</span>
                                 </div>
                             </div>
-                            <div className="flex flex-col lg:items-start">
-                                <span className="text font-mon-b">
-                                    Amenities
-                                </span>
-                                <div className="flex gap-4">
-                                    {/* <Hospital className="mt-2" /> */}
-                                    <School2 className="mt-2" />
-                                    <Club className="mt-2" />
-                                </div>
-                                {/* <span className="text-xl">Hospitals, Schools within 2 kms.</span> */}
-                                {/* <span>24/7 water supply, power backup</span> */}
-                                {/* <span>The atmosphere is lively, fostering social interaction and personal growth. Facilities are accessible, promoting convenience and ease of living.</span> */}
-                            </div>
-                            <div className="flex flex-col lg:items-start">
-                                <span className="text font-mon-b">
-                                    Description
-                                </span>
-                                {/* <span className="text-xl">Hospitals, Schools within 2 kms.</span> */}
-                                {/* <span>24/7 water supply, power backup</span> */}
-                                <span>{prop.longDesc}</span>
-                            </div>
+                        </div>
+                        <div className="google-map-code">
+                            <iframe
+                                src={prop.map}
+                                width="600"
+                                height="450"
+                                frameBorder="0"
+                                style={{ border: 0 }}
+                                allowFullScreen={true}
+                                aria-hidden="false"
+                                tabIndex={0}
+                            />
                         </div>
                     </CardContent>
                     <CardFooter className="flex justify-between">
                         <Button variant="outline">Cancel</Button>
-                        <Button>Contact</Button>
+                        <Link href={"mailto:rohansen856@gmail.com"}>
+                            <Button>Contact</Button>
+                        </Link>
                     </CardFooter>
                 </Card>
             </div>
