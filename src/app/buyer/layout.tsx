@@ -17,7 +17,13 @@ export default async function MarketingLayout({
     const session = await auth()
 
     return (
-        <div className="flex min-h-screen flex-col">
+        <div className="flex min-h-screen flex-col relative">
+            <div className="absolute w-screen h-screen -z-10">
+                <div className="relative h-full w-full bg-slate-950">
+                    {/* eslint-disable-next-line tailwindcss/no-contradicting-classname */}
+                    <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_35px]"></div>
+                </div>
+            </div>
             <header className="container z-40 bg-background">
                 <div className="flex h-20 items-center justify-between py-6">
                     {/* <MainNav items={marketingConfig.mainNav} /> */}
@@ -29,8 +35,7 @@ export default async function MarketingLayout({
                                     variant: "secondary",
                                     size: "sm",
                                 }),
-                                "px-4",
-
+                                "px-4"
                             )}
                         >
                             Login
