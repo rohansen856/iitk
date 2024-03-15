@@ -27,6 +27,7 @@ export const users = pgTable(
 )
 
 export const properties = pgTable("properties", {
+    id: text("id").notNull().primaryKey(),
     userId: text("userId")
         .notNull()
         .references(() => users.id, { onDelete: "cascade" }),

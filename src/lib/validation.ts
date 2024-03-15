@@ -1,4 +1,5 @@
 import { createInsertSchema } from "drizzle-zod"
+import * as z from "zod"
 
 import { properties, users } from "@/lib/schema"
 
@@ -6,3 +7,7 @@ import { properties, users } from "@/lib/schema"
 export const insertUserSchema = createInsertSchema(users)
 
 export const insertPropertySchema = createInsertSchema(properties)
+
+export const userAuthSchema = z.object({
+    email: z.string().email(),
+})
