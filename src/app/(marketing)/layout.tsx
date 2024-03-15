@@ -26,7 +26,7 @@ export default async function MarketingLayout({
                 </div>
             </div>
             <Buildings />
-            <header className="container z-40 bg-background">
+            <header className="container z-40">
                 <div className="flex h-20 items-center justify-between py-6">
                     <MainNav items={marketingConfig.mainNav} />
                     <nav>
