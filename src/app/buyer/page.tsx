@@ -25,7 +25,7 @@ const Page = () => {
     const router = useRouter()
     return (
         <div className="my-5 flex h-full w-full flex-col justify-center gap-5 px-12 lg:flex-row lg:px-36">
-            <div className="h-[300px] w-full rounded-t-lg bg-purple-800/20 py-2 text-center lg:h-[50svh] lg:w-[45svw] lg:rounded-tr-none ">
+            <div className="h-[400px] w-full rounded-t-lg bg-purple-800/20 py-2 text-center lg:h-[50svh] lg:w-[45svw] lg:rounded-tr-none ">
                 Filters
                 <div className="w-full flex flex-col pt-8 px-2">
                     <Input placeholder="enter city name" className="my-2" />

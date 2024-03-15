@@ -25,7 +25,7 @@ export function MobileNav({ items, children }: MobileNavProps) {
                     href={absoluteUrl("/")}
                     className="flex items-center space-x-2"
                 >
-                    <Icons.logo />
+                    <img src="/logo.svg" alt={"homely"} className="h-16" />
                 </Link>
                 <nav className="grid grid-flow-row auto-rows-max text-sm">
                     {items.map((item, index) => (
