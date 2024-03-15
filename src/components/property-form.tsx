@@ -27,6 +27,7 @@ export function PropertyForm() {
         try {
             const res = await axios.post("/api/property", {
                 data: {
+                    id: Math.floor(Math.random() * 1000).toString(),
                     city,
                     image,
                     panorama,
