@@ -4,6 +4,21 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 
 import { Button } from "./ui/button"
+import {
+    Card,
+    CardContent,
+    CardDescription,
+    CardFooter,
+    CardHeader,
+    CardTitle,
+} from "./ui/card"
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 import { Input } from "./ui/input"
 import { Label } from "./ui/label"
 import { toast } from "./ui/use-toast"
@@ -64,94 +79,106 @@ export function PropertyForm() {
     }
 
     return (
-        <div className="flex w-full max-w-full flex-col items-center justify-center bg-purple-400 rounded-lg border p-3">
-            <h2 className="text-lg font-bold">List New Property </h2>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="city">City</Label>
-                <Input
-                    id="city"
-                    className="w-full"
-                    placeholder="Enter City"
-                    value={city}
-                    onChange={(e) => setCity(e.target.value)}
-                />
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="image">Image</Label>
-                <div className="flex flex-row">
-                <input
-                    id="image"
-                    className="w-full rounded-l-lg h-10 bg-black placeholder:px-3 placeholder:text-sm "
-                    placeholder="Add Images"
-                    value={image}
-                    onChange={(e) => setImage(e.target.value)}
-                />
-                <button className="rounded-r-lg w-20 bg-black">Upload</button>
-                </div>
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="panorama">panorama</Label>
-                <Input
-                    id="panorama"
-                    className="w-full"
-                    placeholder="enter panorama"
-                    value={panorama}
-                    onChange={(e) => setPanorama(e.target.value)}
-                />
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="address">address</Label>
-                <Input
-                    id="address"
-                    className="w-full"
-                    placeholder="enter address"
-                    value={address}
-                    onChange={(e) => setAddress(e.target.value)}
-                />
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="bhk">bhk</Label>
-                <Input
-                    id="bhk"
-                    className="w-full"
-                    placeholder="enter bhk"
-                    value={bhk}
-                    onChange={(e) => setBhk(Number.parseInt(e.target.value))}
-                />
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="rating">rating</Label>
-                <Input
-                    id="rating"
-                    className="w-full"
-                    placeholder="enter rating"
-                    value={rating}
-                    onChange={(e) => setRating(Number.parseInt(e.target.value))}
-                />
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="price">price</Label>
-                <Input
-                    id="price"
-                    className="w-full"
-                    placeholder="enter price"
-                    value={price}
-                    onChange={(e) => setPrice(Number.parseInt(e.target.value))}
-                />
-            </div>
-            <div className="m-4 w-full space-y-2">
-                <Label htmlFor="size">size</Label>
-                <Input
-                    id="size"
-                    className="w-full"
-                    placeholder="enter size"
-                    value={size}
-                    onChange={(e) => setSize(Number.parseInt(e.target.value))}
-                />
-            </div>
-            <Button className="mt-2 w-full" onClick={postProperty}>
-                Submit
-            </Button>
+        <div className="flex max-h-[80vh] flex-col w-full items-center mt-8">
+            <Card className="mx-[10%] bg-purple-500/10 ">
+                <CardHeader>
+                    <CardTitle>List a new property</CardTitle>
+                    <CardDescription>
+                        Complete the form to list your property on the website
+                    </CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-row lg:flex-row gap-20 my-5 items-center">
+                        <div className="grid w-[25vw] items-center gap-4">
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="City">City</Label>
+                                <Input
+                                    id="City"
+                                    placeholder="City of your project"
+                                    value={city}
+                                    onChange={(e) => setCity(e.target.value)}
+                                />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="size">Size in Sq.ft</Label>
+                                <Input
+                                    id="size"
+                                    placeholder="size of your project"
+                                    value={size}
+                                    onChange={(e) => setSize(Number.parseInt(e.target.value))}
+                                />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="picture">Picture</Label>
+                                <Input id="picture" type="file" />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="Bhk">Bhk</Label>
+                                <Select onValueChange={(e) => setBhk(Number.parseInt(e))}>
+                                    <SelectTrigger id="Bhk">
+                                        <SelectValue placeholder="Select Number of bhk" ></SelectValue>
+                                    </SelectTrigger>
+                                    <SelectContent position="popper">
+                                        <SelectItem value="1bhk">
+                                            1 Bhk
+                                        </SelectItem>
+                                        <SelectItem value="2bhk">
+                                            2 Bhk
+                                        </SelectItem>
+                                        <SelectItem value="3bhk">
+                                            3 Bhk
+                                        </SelectItem>
+                                        <SelectItem value="4+bhk">
+                                            4+ Bhk
+                                        </SelectItem>
+                                    </SelectContent>
+                                </Select>
+                            </div>
+                        </div>
+                        
+                        <div className="grid w-[25vw] items-center gap-4">
+                            <div className="flex flex-col space-y-1.5">
+                                    <Label htmlFor="Rating">Rating</Label>
+                                    <Input
+                                        id="Rating"
+                                        placeholder="Rating in Dollars"
+                                        value={rating}
+                                        onChange={(e) => setRating(Number.parseInt(e.target.value))}
+                                    />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="Price">Price in $</Label>
+                                <Input
+                                    id="Price"
+                                    placeholder="Price in Dollars"
+                                    value={price}
+                                    onChange={(e) => setPrice(Number.parseInt(e.target.value))}
+                                />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="address">Address</Label>
+                                <Input
+                                    id="address"
+                                    placeholder="Address of your property"
+                                    value={address}
+                                    onChange={(e) => setAddress(e.target.value)}
+                                />
+                            </div>
+                            <div className="flex flex-col space-y-1.5">
+                                <Label htmlFor="panorama">Panorama</Label>
+                                <Input
+                                    id="panorama"
+                                    placeholder="Panorama of your property"
+                                    value={panorama}
+                                    onChange={(e) => setPanorama(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                </CardContent>
+                <CardFooter className="flex justify-between">
+                    <Button variant="outline">Cancel</Button>
+                    <Button onClick={postProperty}>Post</Button>
+                </CardFooter>
+            </Card>
         </div>
     )
 }

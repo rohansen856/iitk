@@ -42,6 +42,7 @@ export default function PropertyCard() {
     })
     return (
         <>
+<<<<<<< HEAD
             <div
                 className="flex max-h-[80vh] flex-col w-full items-center"
                 ref={h1}
@@ -119,6 +120,24 @@ export default function PropertyCard() {
                                     are accessible, promoting convenience and
                                     ease of living.
                                 </span>
+=======
+            <div className="flex max-h-[80vh] flex-col w-full items-center mt-8" ref={h1}>
+            <Card className="mx-[10%] bg-purple-500/10 ">
+                <CardHeader>
+                <CardTitle>{prop.name}</CardTitle>
+                <CardDescription>{prop.description}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex flex-col lg:flex-row gap-20 my-5 items-center">
+                    <PropImage />
+                    <div className="flex flex-col gap-4 outline-1 outline-dashed rounded-md p-5">
+                        <div className="flex flex-col lg:items-start relative">
+                            <span className="text font-mon-b">Pricing</span>
+                            <span className="text-2xl font-mon-b">$22L-44L</span>
+                            <span className="text-xs">view EMI options</span>
+                            <div className="flex absolute right-0 flex-col top-6">
+                                <span className="text-green-400 text-xs">+12%</span>
+                                <span className="text-xs">In last 90 days</span>
+>>>>>>> 4734084ff178fca2ee75f3e39c9d47c883e438b9
                             </div>
                         </div>
                     </CardContent>
