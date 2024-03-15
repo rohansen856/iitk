@@ -17,8 +17,8 @@ export default async function MarketingLayout({
     const session = await auth()
 
     return (
-        <div className="flex max-h-screen flex-col relative max-w-screen overflow-hidden">
-            <div className="absolute w-screen h-screen -z-10">
+        <div className="max-w-screen relative flex max-h-screen flex-col overflow-hidden">
+            <div className="absolute -z-10 h-screen w-screen">
                 <div className="relative h-full w-full bg-slate-950">
                     {/* eslint-disable-next-line tailwindcss/no-contradicting-classname */}
                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#4f4f4f2e_1px,transparent_1px),linear-gradient(to_bottom,#4f4f4f2e_1px,transparent_1px)] bg-[size:35px_35px]"></div>
