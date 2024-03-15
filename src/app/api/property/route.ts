@@ -14,7 +14,7 @@ export async function POST(req: Request) {
         // Update the user.
         await db.insert(properties).values({
             id: payload.id,
-            city: payload.city,
+            city: payload.city.toLowerCase(),
             image: payload.image,
             panorama: payload.panorama,
             address: payload.address,
