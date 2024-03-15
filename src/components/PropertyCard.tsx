@@ -5,6 +5,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import anime from "animejs"
 import { Club, School2 } from "lucide-react"
+import { NextImageTurntable } from "next-360-image-viewer"
 
 import PropImage from "./PropImage"
 import { Button } from "./ui/button"
@@ -36,6 +37,7 @@ export default function PropertyCard() {
             description: "The perfect retirement Home!",
             longDesc:
                 "The atmosphere is lively, fostering social interaction and personal growth. Facilities are accessible, promoting convenience and ease of living.",
+            pano: "/pano (1).jpg",
             map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114312.51528009173!2d80.25598103996941!3d26.44715007162656!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c4770b127c46f%3A0x1778302a9fbe7b41!2sKanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1710504808525!5m2!1sen!2sin",
         },
         {
@@ -48,6 +50,7 @@ export default function PropertyCard() {
             description: "Exquisite living at its finest!",
             longDesc:
                 "Indulge in luxury with breathtaking views, top-notch amenities, and unparalleled comfort. Experience opulence like never before.",
+            pano: "/pano (2).jpg",
             map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224346.54004883842!2d77.04417347155065!3d28.52725273882469!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1710504987437!5m2!1sen!2sin",
         },
         {
@@ -60,6 +63,8 @@ export default function PropertyCard() {
             description: "Escape to serenity amidst nature!",
             longDesc:
                 "Embrace the tranquility of nature with this charming cottage. Surrounded by lush greenery and majestic mountains, it's an idyllic retreat for those seeking peace and relaxation.",
+
+            pano: "/pano (3).jpg",
             map: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3812153.9041600493!2d71.07362921622213!3d18.820144128111238!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2zTXVtYmFpIOCkruClgeCkguCkrOCkiA!5e0!3m2!1sen!2sin!4v1710505128602!5m2!1sen!2sin",
         },
     ]
@@ -170,6 +175,13 @@ export default function PropertyCard() {
                                     <span>{prop.longDesc}</span>
                                 </div>
                             </div>
+                        </div>
+                        <div>
+                            <img
+                                src={prop.pano}
+                                alt=""
+                                className="w-full h-[450px] object-contain border hover:border-blue-700 rounded-lg"
+                            />
                         </div>
                         <div className="google-map-code">
                             <iframe
