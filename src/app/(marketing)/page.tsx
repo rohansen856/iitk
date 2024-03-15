@@ -37,7 +37,7 @@ export default async function IndexPage() {
     return (
         <>
             <div className="flex h-[80vh] flex-col w-full items-center">
-                <h1 className="mt-[25svh] max-md:mt-[10svh] text-7xl font-mon-b z-0" ref={h1}>Homely</h1>
+                <h1 className="mt-[25svh] max-md:mt-[10svh] text-7xl font-mon-b z-0 tracking-wider" ref={h1}>Homely</h1>
                 <span className="font-mon-r text-xl z-10 mb-8 mt-2 text-purple-300" ref={desc}>find your next and forever home.</span>       
                 <div className="w-2/5 relative flex items-center justify-center z-20" ref={inp}>
                 <SearchDropdown options={options} />

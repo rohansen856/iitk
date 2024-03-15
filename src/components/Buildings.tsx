@@ -36,14 +36,14 @@ return (
     <>
     <div className="absolute z-10 bottom-0 h-[30svh] w-screen bg-gradient-to-b from-transparent to-slate-900"></div>
     <div className="flex w-screen h-[100svh] absolute z-0 gap-4 items-end blur-[2px] opacity-75">
-            <div className="w-2/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state1 }}></div>
-            <div className="w-1/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state2 }}></div>
-            <div className="w-2/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state3 }}></div>
+            <div className="w-[20%] bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state1 }}></div>
+            <div className="w-[30%] bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state2 }}></div>
+            <div className="w-[25%] bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state3 }}></div>
             <div className="w-1/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state4 }}></div>
             <div className="w-[25%] bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state5 }}></div>
     </div>
     <div className="flex w-screen h-[100svh] absolute z-0 items-end">
-            <div className="w-[25%] mr-8 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state6 }}></div>
+            <div className="w-[25%] ml-16 mr-8 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state6 }}></div>
             <div className="w-[25%] ml-2 mr-[5vw] bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state7 }}></div>
             <div className="w-[25%] ml-20 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state8 }}></div>
     </div>
