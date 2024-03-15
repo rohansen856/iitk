@@ -32,6 +32,8 @@ export const properties = pgTable("properties", {
         .references(() => users.id, { onDelete: "cascade" }),
     city: text("city").notNull(),
     bhk: integer("bhk").default(2),
+    price: integer("price").notNull(),
+    size: integer("size").notNull(),
     rating: integer("rating").default(4),
     address: text("address").default(""),
     image: text("image").notNull(),

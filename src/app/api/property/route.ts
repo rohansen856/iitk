@@ -18,6 +18,8 @@ export async function POST(req: Request) {
             panorama: payload.panorama,
             address: payload.address,
             bhk: payload.bhk,
+            price: payload.price,
+            size: payload.size,
             rating: payload.rating,
             userId: payload.userId,
         })
