@@ -41,9 +41,9 @@ return (
             <div className="w-1/5 bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state4 }}></div>
             <div className="w-[25%] bg-purple-600 rounded-lg transition-all duration-500 ease-out " style={{ height: state5 }}></div>
     </div>
-    <div className="flex w-screen h-[100svh] absolute z-0 items-end left-12">
+    <div className="flex w-screen h-[100svh] absolute z-0 items-end">
             <div className="w-[25%] mr-8 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state6 }}></div>
-            <div className="w-[25%] ml-2 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state7 }}></div>
+            <div className="w-[25%] ml-2 mr-12 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state7 }}></div>
             <div className="w-[25%] ml-20 bg-purple-400 rounded-lg transition-all duration-500 ease-out " style={{ height: state8 }}></div>
     </div>
     </>
