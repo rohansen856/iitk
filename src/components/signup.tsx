@@ -91,7 +91,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
                         onChange={(e) =>
                             settype(e.target.value as "buyer" | "seller")
                         }
-                        placeholder="type"
+                        placeholder="buyer or seller"
                     />
                 </div>
                 <Button className="mt-6 w-full" onClick={signup}>
