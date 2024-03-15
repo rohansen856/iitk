@@ -8,13 +8,13 @@ export function Loadmore() {
 
 const page = () => {
     return (
-        <div className="my-5 flex h-full w-full flex-col lg:flex-row justify-center gap-5 px-12 lg:px-36">
-            <div className="h-[300px] w-full lg:h-[100svh] lg:w-[45svw] rounded-t-lg lg:rounded-tr-none bg-purple-400 text-center ">
+        <div className="my-5 flex h-full w-full flex-col lg:flex-row justify-center gap-5 px-12 lg:px-36 ">
+            <div className="h-[300px] w-full lg:h-[100svh] lg:w-[45svw] rounded-t-lg lg:rounded-tr-none bg-purple-800/40 text-center py-3">
                 Filters
             </div>
-            <div className="flex h-full w-full flex-col items-center gap-5 bg-purple-400 text-center">
-                <span>property listing</span>
-                <div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500 p-4 ">
+            <div className="flex h-full w-full flex-col items-center gap-5 bg-purple-800/40 text-center">
+                <span>Property listings</span>
+                <div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500/50 p-4 ">
                     <img
                         src="/house.svg"
                         alt=""
@@ -32,7 +32,7 @@ const page = () => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500 p-4 ">
+                <div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500/50 p-4 ">
                     <img
                         src="/house.svg"
                         alt=""
@@ -49,7 +49,7 @@ const page = () => {
                             <span>3.0k per sq.ft</span>
                         </div>
                     </div>
-                </div><div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500 p-4 ">
+                </div><div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500/50 p-4 ">
                     <img
                         src="/house.svg"
                         alt=""
@@ -66,7 +66,7 @@ const page = () => {
                             <span>3.0k per sq.ft</span>
                         </div>
                     </div>
-                </div><div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500 p-4 ">
+                </div><div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500/50 p-4 ">
                     <img
                         src="/house.svg"
                         alt=""
@@ -86,7 +86,7 @@ const page = () => {
                 </div>
                 <Button>Load More</Button>
             </div>
-            <div className="h-[40svh] w-[60svh] hidden lg:block rounded-tr-lg bg-purple-400 text-center">
+            <div className="h-[40svh] w-[60svh] hidden lg:block rounded-tr-lg bg-purple-800/40 text-center">
                 More Info
             </div>
         </div>
