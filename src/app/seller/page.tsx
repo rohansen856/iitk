@@ -41,7 +41,7 @@ const Page = () => {
     }, [])
 
     return (
-        <div className="my-5 flex h-full w-full gap-10 flex-col-reverse lg:flex-row justify-center px-36 ">
+        <div className="my-5 flex h-full w-full gap-10 flex-col-reverse lg:flex-row justify-center px-5 lg:px-36 ">
             <div className="flex h-full w-full flex-col rounded-lg items-center gap-5 bg-purple-400 text-center">
                 <span>Your Properties</span>
                 <div className="flex flex-col lg:flex-row h-full max-w-[95%] items-start gap-2 rounded-lg bg-purple-500 p-4 ">
