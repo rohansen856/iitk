@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 import { Button } from "./ui/button";
 import { Card, CardContent,CardDescription,CardHeader,CardTitle,CardFooter } from "./ui/card";
 import PropImage from "./PropImage";
-import {Club, Hospital, School2} from "lucide-react";
+import {Club, School2} from "lucide-react";
 
 
 // interface property{
@@ -73,7 +73,7 @@ export default function PropertyCard() {
                         <div className="flex flex-col lg:items-start">
                             <span className="text font-mon-b">Amenities</span>
                             <div className="flex gap-4">
-                                <Hospital className="mt-2" />
+                                {/* <Hospital className="mt-2" /> */}
                                 <School2 className="mt-2" />    
                                 <Club className="mt-2" />
                             </div>                        
