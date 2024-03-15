@@ -5,38 +5,42 @@ import {
     primaryKey,
     text,
     timestamp,
+    unique,
     uniqueIndex,
+    uuid,
 } from "drizzle-orm/pg-core"
 
-export const users = pgTable(
-    "user",
+export const profiles = pgTable(
+    "profiles",
     {
-        id: text("id").notNull().primaryKey(),
-        name: text("name"),
-        type: text("type").default("buyer"),
-        email: text("email").notNull(),
-        emailVerified: timestamp("emailVerified", { mode: "date" }),
-        createdAt: timestamp("created_at").notNull().defaultNow(),
-        image: text("image"),
+        id: uuid("id").primaryKey().notNull(),
+        updatedAt: timestamp("updated_at", {
+            withTimezone: true,
+            mode: "string",
+        }),
+        username: text("username"),
+        fullName: text("full_name"),
+        avatarUrl: text("avatar_url"),
+        website: text("website"),
     },
-    (users) => {
+    (table) => {
         return {
-            uniqueIdx: uniqueIndex("unique_email").on(users.email),
+            profilesUsernameKey: unique("profiles_username_key").on(
+                table.username
+            ),
         }
     }
 )
 
 export const properties = pgTable("properties", {
-    id: text("id").notNull().primaryKey(),
-    userId: text("userId")
-        .notNull()
-        .references(() => users.id, { onDelete: "cascade" }),
-    city: text("city").notNull(),
-    bhk: integer("bhk").default(2),
+    id: uuid("id").primaryKey().notNull(),
+    userId: text("userId").notNull(),
     price: integer("price").notNull(),
-    size: integer("size").notNull(),
-    rating: integer("rating").default(4),
+    city: text("city").notNull(),
     address: text("address").default(""),
+    size: integer("size").notNull(),
+    bhk: integer("bhk").default(2),
+    seller: text("seller").notNull(),
+    description: text("description"),
     image: text("image").notNull(),
-    panorama: text("panorama").notNull(),
 })
