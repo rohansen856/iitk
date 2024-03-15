@@ -1,11 +1,13 @@
 "use client"
 
 import React, { useEffect } from "react"
+import { useRouter } from "next/navigation"
 import axios from "axios"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { toast } from "@/components/ui/use-toast"
+import { PropertyForm } from "@/components/property-form"
 
 export function Loadmore() {
     return true
@@ -15,6 +17,7 @@ const Page = () => {
     const [email, setemail] = React.useState("rohansen856@gmail.com")
     const [name, setname] = React.useState("Rohan Sen")
     const [phnum, setphnum] = React.useState("")
+    const router = useRouter()
 
     function success() {
         return toast({
@@ -118,24 +121,8 @@ const Page = () => {
                 </div>
                 <Button>Load More</Button>
             </div>
-            <div className="h-[400px] w-[350px] rounded-tr-lg bg-purple-400 text-center border rounded-lg flex flex-col gap-4 p-4">
-                <span className="text-lg lg:text-2xl">Seller Details</span>
-                <div className="flex flex-col items-start">
-                    <span>Email</span>
-                    <Input value={email} disabled className="mb-6" />
-                    <span>Name</span>
-                    <Input value={name} disabled className="mb-6" />
-                    <span>Contact</span>
-                    <Input
-                        value={phnum}
-                        onChange={(e) => setphnum(e.target.value)}
-                        type="number"
-                        className="mb-6 bg-secondary"
-                    />
-                    <Button className="w-full mt-4 mb-10" onClick={success}>
-                        Update
-                    </Button>
-                </div>
+            <div className="h-[450px] w-[350px] text-center flex flex-col gap-4">
+                <PropertyForm />
             </div>
         </div>
     )
