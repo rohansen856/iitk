@@ -38,7 +38,7 @@ const SearchDropdown: React.FC<SearchDropdownProps> = ({ options }) => {
     const handleOptionClick = (option: Option) => {
         setSelectedOption(option)
         setIsOpen(false)
-        router.push("/buyer")
+        router.push(`/buyer?city=${option.label}`)
     }
 
     return (
