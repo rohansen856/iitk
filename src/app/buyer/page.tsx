@@ -66,7 +66,7 @@ const Page = () => {
                     href={"/property/987"}
                     className="flex h-full max-w-[95%] flex-col items-start gap-2 rounded-lg bg-purple-600/40 p-4 lg:flex-row "
                 >
-                    <img src="/house.svg" alt="" className="h-full w-[50svw]" />
+                    <img src="/house1.svg" alt="" className="h-full w-[50svw]" />
                     <div className="flex h-full w-full flex-col gap-8">
                         <div className="flex flex-col lg:items-end">
                             <span className="text-2xl">$22L-44L</span>
@@ -83,7 +83,7 @@ const Page = () => {
                     href={"/property/098"}
                     className="flex h-full max-w-[95%] flex-col items-start gap-2 rounded-lg bg-purple-600/40 p-4 lg:flex-row "
                 >
-                    <img src="/house.svg" alt="" className="h-full w-[50svw]" />
+                    <img src="/house2.svg" alt="" className="h-full w-[50svw]" />
                     <div className="flex h-full w-full flex-col gap-8">
                         <div className="flex flex-col lg:items-end">
                             <span className="text-2xl">$22L-44L</span>
@@ -100,7 +100,7 @@ const Page = () => {
                     href={"/property/110"}
                     className="flex h-full max-w-[95%] flex-col items-start gap-2 rounded-lg bg-purple-600/40 p-4 lg:flex-row "
                 >
-                    <img src="/house.svg" alt="" className="h-full w-[50svw]" />
+                    <img src="/house3.svg" alt="" className="h-full w-[50svw]" />
                     <div className="flex h-full w-full flex-col gap-8">
                         <div className="flex flex-col lg:items-end">
                             <span className="text-2xl">$22L-44L</span>
@@ -117,7 +117,7 @@ const Page = () => {
                     href={"/property/745"}
                     className="flex h-full max-w-[95%] flex-col items-start gap-2 rounded-lg bg-purple-600/40 p-4 lg:flex-row "
                 >
-                    <img src="/house.svg" alt="" className="h-full w-[50svw]" />
+                    <img src="/house4.svg" alt="" className="h-full w-[50svw]" />
                     <div className="flex h-full w-full flex-col gap-8">
                         <div className="flex flex-col lg:items-end">
                             <span className="text-2xl">$22L-44L</span>
