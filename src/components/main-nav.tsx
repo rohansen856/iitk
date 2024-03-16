@@ -38,7 +38,8 @@ export function MainNav({ items, children }: MainNavProps) {
                                 item.href.startsWith(`/${segment}`)
                                     ? "text-foreground"
                                     : "text-foreground/60",
-                                item.disabled && "cursor-not-allowed opacity-80",
+                                item.disabled &&
+                                    "cursor-not-allowed opacity-80",
                                 item.title === "Exclusive" && "text-yellow-300" // Add this line
                             )}
                         >
@@ -51,7 +52,11 @@ export function MainNav({ items, children }: MainNavProps) {
                 className="flex items-center space-x-2 md:hidden"
                 onClick={() => setShowMobileMenu(!showMobileMenu)}
             >
-                {showMobileMenu ? <Icons.close /> : <Icons.logo />}
+                {showMobileMenu ? (
+                    <Icons.close />
+                ) : (
+                    <img src="/logo.svg" alt={"homely"} className="h-8" />
+                )}
                 <span className="font-bold">Menu</span>
             </button>
             {showMobileMenu && items && (

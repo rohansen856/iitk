@@ -1,6 +1,5 @@
 "use client"
 
-import React, { useEffect, useRef } from "react"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import anime from "animejs"
@@ -25,7 +24,7 @@ const Page = () => {
     const router = useRouter()
     return (
         <div className="my-5 flex h-full w-full flex-col justify-center gap-5 px-12 lg:flex-row lg:px-36">
-            <div className="h-[300px] w-full rounded-t-lg bg-purple-800/20 py-2 text-center lg:h-[50svh] lg:w-[45svw] lg:rounded-tr-none ">
+            <div className="h-[400px] w-full rounded-t-lg bg-purple-800/20 py-2 text-center lg:h-[50svh] lg:w-[45svw] lg:rounded-tr-none max-w-[400px]">
                 Filters
                 <div className="w-full flex flex-col pt-8 px-2">
                     <Input placeholder="enter city name" className="my-2" />
@@ -60,7 +59,7 @@ const Page = () => {
                     </Button>
                 </div>
             </div>
-            <div className="flex h-full w-full flex-col items-center gap-5 bg-purple-800/20 py-2 text-center">
+            <div className="flex h-full w-full flex-col items-center gap-5 bg-purple-800/20 py-2 text-center max-w-[700px]">
                 <span>property listing</span>
                 <Link
                     href={"/property/987"}
@@ -131,9 +130,6 @@ const Page = () => {
                     </div>
                 </Link>
                 <Button>Load More</Button>
-            </div>
-            <div className="hidden h-[40svh] w-[60svh] rounded-tr-lg bg-purple-800/20 text-center lg:block">
-                More Info
             </div>
         </div>
     )
