@@ -5,7 +5,8 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import anime from "animejs"
 import { Club, School2 } from "lucide-react"
-import { NextImageTurntable } from "next-360-image-viewer"
+
+
 
 import PropImage from "./PropImage"
 import { Button } from "./ui/button"
@@ -25,7 +26,6 @@ import {
 export default function PropertyCard() {
     const h1 = useRef(null)
     const id = usePathname().split("/").pop()
-
     const properties = [
         {
             id: 1,
@@ -78,7 +78,12 @@ export default function PropertyCard() {
 
     const [loggedin, setloggedin] = useState(false)
 
+
     useEffect(() => {
+        // const viewer = new Viewer({
+        //     container: pan.current,
+        //     panorama: 'pano (1).jpg',
+        // });
         const animation = anime({
             targets: [h1.current],
             opacity: [0, 1],
@@ -177,11 +182,13 @@ export default function PropertyCard() {
                             </div>
                         </div>
                         <div>
-                            <img
+                        <iframe width="600" height="450" allowFullScreen="true" allow="accelerometer; magnetometer; gyroscope" className="object-contain border hover:border-blue-700 rounded-lg" src="https://panoraven.com/fr/embed/paY2wIlpsQ"></iframe>
+                            {/* <div ref={pan} className="w-full h-[450px] object-contain border hover:border-blue-700 rounded-lg"></div> */}
+                            {/* <img
                                 src={prop.pano}
                                 alt=""
                                 className="w-full h-[450px] object-contain border hover:border-blue-700 rounded-lg"
-                            />
+                            /> */}
                         </div>
                         <div className="google-map-code">
                             <iframe

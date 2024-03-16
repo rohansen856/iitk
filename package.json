@@ -16,6 +16,7 @@
         "@auth/core": "^0.18.1",
         "@auth/drizzle-adapter": "^0.3.6",
         "@hookform/resolvers": "^3.3.2",
+        "@photo-sphere-viewer/core": "^5.7.2",
         "@radix-ui/react-accordion": "^1.1.2",
         "@radix-ui/react-alert-dialog": "^1.0.5",
         "@radix-ui/react-aspect-ratio": "^1.0.3",
